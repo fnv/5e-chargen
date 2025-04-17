@@ -1,0 +1,39 @@
+<table class="list" ng-class="(spellFilters.selectedClass) ? 'list__class-filtered' : ''">
+    <thead>
+        <tr>
+            <td style="width:150px;" class="list--column list--column__spell">Spell</td>
+            <td class="list--column list--column__short_desc">Description</td>
+            <td class="list--column list--column__time">To Cast</td>
+            <td class="list--column list--column__range">Range</td>
+            <td class="list--column list--column__duration">Duration</td>
+            <td class="list--column list--column__school">School</td>      
+            <td style="width:100px;" class="list--column list--column__classes">Classes</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="list--row" ng-repeat="spell in spells | spellsFilter:spellFilters" ng-class-even="'list--row__even-row'">
+            <td style="width:150px;" class="list--column list--column__spell">
+                <div class="list--spell-name">{{ spell.name }}</div>
+                <div class="list--spell-tags" ng-if="spell.tags.length">{{ spell.tags.join(", ") }}</div>
+            </td>
+            <td style="width:350px;" class="list--column list--column__short_desc">
+                <div class="list--spell-short_desc">{{spell.short_desc}}</div>
+            </td>
+            <td style="width:100px;" class="list--column list--column__time">
+                <div class="list--spell-time">{{spell.time}}</div>
+            </td>
+            <td style="width:100px;" class="list--column list--range">
+                <div class="list--spell-range">{{spell.range}}</div>
+            </td>
+            <td style="width:100px;" class="list--column list--duration">
+                <div class="list--spell-duration">{{spell.duration}}</div>
+            </td>
+            <td class="list--column list--column__school">{{ 'Level ' + spell.level + ' ' + spell.school | cantrip }}</td>
+            <td style="width:100px;" class="list--column list--column__classes">
+                <div ng-repeat="class in spell.classes">
+                    {{ class | normalizedClass }}
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

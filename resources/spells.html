@@ -1,0 +1,24 @@
+<html ng-app="spelllist">
+<head>
+    <title>D&amp;D 5e Spell lists</title>
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-ui-router.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/data/spells.js"></script>
+    <script src="scripts/data/classes.js"></script>
+    <script src="scripts/data/lists/bard.js"></script>
+    <script src="scripts/data/lists/cleric.js"></script>
+    <script src="scripts/data/lists/druid.js"></script>
+    <script src="scripts/data/lists/paladin.js"></script>
+    <script src="scripts/data/lists/ranger.js"></script>
+    <script src="scripts/data/lists/sorcerer.js"></script>
+    <script src="scripts/data/lists/warlock.js"></script>
+    <script src="scripts/data/lists/wizard.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+    <div ui-view></div>
+    <script src="scripts/controllers/list.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
